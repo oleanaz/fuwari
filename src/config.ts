@@ -38,22 +38,22 @@ export const profileConfig: ProfileConfig = {
     {
       name: 'Twitter',
       icon: 'fa6-brands:twitter',
-      url: 'https://twitter.com/oleanns',
+      url: '',
     },
     {
-      name: 'Steam',
+      name: 'Linkedin',
       icon: 'fa6-brands:linkedin',
       url: 'https://www.linkedin.com/in/nazir-sapar-3b3288121/',
     },
     {
       name: 'GitHub',
       icon: 'fa6-brands:github',
-      url: 'https://github.com/oleanaz',
+      url: '',
     },
     {
       name: 'Instagram',
       icon: 'fa6-brands:instagram',
-      url: 'https://instagram.com/mangytmoon',
+      url: '',
     },
   ],
 }
