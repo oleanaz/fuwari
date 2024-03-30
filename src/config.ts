@@ -53,7 +53,7 @@ export const profileConfig: ProfileConfig = {
     {
       name: 'Instagram',
       icon: 'fa6-brands:instagram',
-      url: '',
+      url: 'https://instagram.com/mangytmoon',
     },
   ],
 }
