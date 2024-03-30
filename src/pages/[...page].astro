@@ -1,11 +1,10 @@
 ---
 import MainGridLayout from "../layouts/MainGridLayout.astro";
-import PostCard from "../components/PostCard.astro";
 import Pagination from "../components/control/Pagination.astro";
 import {getSortedPosts} from "../utils/content-utils";
-import {getPostUrlBySlug} from "../utils/url-utils";
 import {PAGE_SIZE} from "../constants/constants";
 import PostPage from "../components/PostPage.astro";
+import ImageWrapper from "../components/misc/ImageWrapper.astro";
 
 export async function getStaticPaths({ paginate }) {
     const allBlogPosts = await getSortedPosts();
@@ -15,10 +14,17 @@ export async function getStaticPaths({ paginate }) {
 const {page} = Astro.props;
 
 const len = page.data.length;
+const noContentImage = 'assets/images/writing-warrior.webp';
 
 ---
 
 <MainGridLayout>
+  {len > 0 ?
     <PostPage page={page}></PostPage>
     <Pagination class="mx-auto onload-animation" page={page} style=`animation-delay: calc(var(--content-delay) + ${(len)*50}ms)`></Pagination>
-</MainGridLayout>
+    :
+    <ImageWrapper src={noContentImage} alt="No content :(" class="mx-auto w-1/2"></ImageWrapper>
+    <h1 class="font-bold text-xl text-center mb-1 dark:text-neutral-50 transition flex flex-row gap-3 place-content-center">posts are coming 🖋</h1>
+  }
+</MainGridLayout> 
+
